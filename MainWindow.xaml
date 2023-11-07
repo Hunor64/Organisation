@@ -1,0 +1,37 @@
+﻿<Window x:Class="OrgProcessor.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:OrgProcessor"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800"
+        ResizeMode="NoResize">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="2*"/>
+        </Grid.RowDefinitions>
+        <DataGrid AutoGenerateColumns="False" x:Name="dtgAdatok" Grid.ColumnSpan="2" Width="700" Height="210px" VerticalAlignment="Center" SelectionChanged="selectedDataExport">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Név" Binding="{Binding Name}"/>
+                <DataGridTextColumn Header="Ország" Binding="{Binding Country}"/>
+                <DataGridTextColumn Header="Alapítás Év" Binding="{Binding Founded}"/>
+                <DataGridTextColumn Header="Iparterület" Binding="{Binding Industry}"/>
+                <DataGridTextColumn Header="Létszám" Binding="{Binding EmployeesNumber}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <ComboBox x:Name="cmbFoundingDate" Margin="10px"  Grid.Row="1" Height="30px" Width="140px" HorizontalAlignment="Right"/>
+        <ComboBox x:Name="cmbCountryName" Margin="10px"  Grid.Row="1" Grid.Column="1" Height="30px" Width="140px" HorizontalAlignment="Right"/>
+        <Label Content="Dátum:" Grid.Row="1" Margin="10px" FontSize="25" VerticalAlignment="Center"/>
+        <Label Content="Ország:" Margin="10px" Grid.Row="1" Grid.Column="1" FontSize="25" VerticalAlignment="Center"/>
+        <Label Grid.Row="2" Content="Azonosító: NaN" VerticalContentAlignment="Top" FontSize="20" x:Name="lblAzonosytó" />
+        <Label Grid.Row="2" Content="Weboldal: NaN" VerticalContentAlignment="Center" FontSize="20" x:Name="lblWebcim"/>
+        <Label Grid.RowSpan="2" Grid.Row="1" Content="Leírás: NaN" VerticalContentAlignment="Bottom" FontSize="20" x:Name="lblLeiras" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="0,72,0,0"/>
+    </Grid>
+</Window>
